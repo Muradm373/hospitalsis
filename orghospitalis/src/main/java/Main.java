@@ -10,7 +10,7 @@ public class Main {
             //Registering the HSQLDB JDBC driver
             Class.forName("org.hsqldb.jdbc.JDBCDriver");
             //Creating the connection with HSQLDB
-            con = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/testdb", "SA", "");
+            con = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost:1234/testdb", "SA", "" );
             if (con!= null){
                 System.out.println("Connection created successfully");
 
