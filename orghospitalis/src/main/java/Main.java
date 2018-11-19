@@ -1,26 +1,17 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args){
-        Connection con = null;
+    public static void main(String[] args) {
 
-        try {
-            //Registering the HSQLDB JDBC driver
-            Class.forName("org.hsqldb.jdbc.JDBCDriver");
-            //Creating the connection with HSQLDB
-            con = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost:1234/testdb", "SA", "" );
-            if (con!= null){
-                System.out.println("Connection created successfully");
-
-            }else{
-                System.out.println("Problem with creating connection");
-            }
-
-        }  catch (Exception e) {
-            e.printStackTrace(System.out);
+        System.out.println("Do you want to initialize the database? (Y/N)");
+        Scanner scan = new Scanner(System.in);
+        if (scan.nextLine().equals("Y")) {
+            DBInitialization.resetDatabase();
+            DBInitialization.initianalize();
         }
 
+        UserBoundary.initialize();
     }
 }
