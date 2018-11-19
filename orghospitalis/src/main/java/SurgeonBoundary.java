@@ -24,6 +24,7 @@ public class SurgeonBoundary {
 
             switch (choice) {
                 case 1:
+                    System.out.println("Write types of oncologists you want to add, each on a new line (c to stop):");
                     while (!(input = scan.nextLine()).equals("c"))
                     {
                        types.add(input);

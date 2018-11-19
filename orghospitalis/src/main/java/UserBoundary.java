@@ -20,7 +20,7 @@ public class UserBoundary {
                     username = scan.nextLine();
                     System.out.println("Insert password:");
                     password = scan.nextLine();
-                    System.out.println("Insert type: (Administrative Officer/Receptionist/Fellow/Specialist)");
+                    System.out.println("Insert type: (Administrative Officer/Receptionist/Fellow/Specialist/Surgeon)");
                     type = scan.nextLine();
                     userController.register(username, password, type);
 
@@ -50,6 +50,9 @@ public class UserBoundary {
 
 
                     }
+                    break;
+                default:
+                    System.out.println("Try another value!");
                     break;
             }
         }

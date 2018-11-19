@@ -120,7 +120,7 @@ public class SurgeonDAO {
                         stmt = con.createStatement();
 
                         for (String type : types) {
-                            ResultSet result = stmt.executeQuery("SELECT * FROM surgeon WHERE type = " + type);
+                            ResultSet result = stmt.executeQuery("SELECT  surgeonID, name, surname, profID, type, level, date FROM surgeon WHERE type = '" + type+"'");
 
                             while (result.next()) {
                                 Surgeon active_surgeon = new Surgeon(result.getString("surgeonID"),
