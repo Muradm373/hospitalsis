@@ -24,6 +24,11 @@ public class DBInitialization {
                     stmt.executeUpdate("CREATE TABLE surgeon (surgeonID varchar(20) NOT NULL, name varchar(20), surname varchar(60), profID varchar(60), type varchar(60), level varchar(60),date varchar(10000), PRIMARY KEY (surgeonID));");
                     stmt.executeUpdate("CREATE TABLE oncologist (oncologistID varchar(20) NOT NULL, name varchar(20), surname varchar(60), profID varchar(60), type varchar(60), level varchar(60),date varchar(10000), PRIMARY KEY (oncologistID));");
                     stmt.executeUpdate("CREATE TABLE folder (patientID varchar(20) NOT NULL, name varchar(20), surname varchar(60), insuranceType varchar(60), insuranceCode varchar(60), dateOfBirth varchar(60),datesOfVisit varchar(10000),surgeryDate varchar(10000), anamnesis varchar(10000), oncologist varchar(10000), surgery varchar(10000), posology varchar(10000), tests varchar(10000), report varchar(10000), PRIMARY KEY (patientID));");
+                    stmt.executeUpdate("CREATE TABLE clinicalBloodTests (dates varchar(1000));");
+                    stmt.executeUpdate("CREATE TABLE clinicalImagingTests (dates varchar(1000));");
+
+                    stmt.executeQuery("INSERT INTO clinicalBloodTests VALUES (' ');");
+                    stmt.executeQuery("INSERT INTO clinicalImagingTests VALUES (' ');");
                     System.out.println("Database initialized successfully");
                 }catch (Exception e) {
                     e.printStackTrace(System.out);
@@ -52,6 +57,8 @@ public class DBInitialization {
             stmt.executeUpdate("DROP TABLE oncologist;");
             stmt.executeUpdate("DROP TABLE surgeon;");
             stmt.executeUpdate("DROP TABLE folder;");
+            stmt.executeUpdate("DROP TABLE clinicalImagingTests;");
+            stmt.executeUpdate("DROP TABLE clinicalBloodTests;");
         }  catch (Exception e) {
             e.printStackTrace(System.out);
         }

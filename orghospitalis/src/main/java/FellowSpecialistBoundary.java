@@ -81,6 +81,7 @@ public class FellowSpecialistBoundary {
                     patientFolderController.addTestsToFolder(patientID, patientReport);
                     break;
                 case 7:
+                    ClinicalTestsBoundary.initialize();
                     break;
                 case 8:
                     logout = true;
